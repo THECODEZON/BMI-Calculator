@@ -1,38 +1,221 @@
-.App {
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #ffffffd3;
+}
+main{
+  font-family: 'Times New Roman', Times, serif;
   text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  width: 90vw;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top:50px ;
+  padding-bottom: 20px;
+ border-radius: 20px;
+ background-color: #e6e0e0;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 5.1);
+ 
+}
+h1{
+  margin-bottom: 20px;
+  background-color: rgb(91, 91, 252);
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-section{
+  width: 70%;
+}
+.input-slider{
+  width: 100%;
+}
+.output{
+  background-color: rgb(91, 91, 252);
+  width: 100%;
+  padding: 10px 5px;
+  margin-top: 10px;
+  border-radius: 9999px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light-button button.bt {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  outline: none;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.light-button button.bt .button-holder {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100px;
+  width: 100px;
+  background-color: #0a0a0a;
+  border-radius: 5px;
+  color: #0f0f0f;
+  font-weight: 700;
+  transition: 300ms;
+  outline: #0f0f0f 2px solid;
+  outline-offset: 20;
 }
 
-.App-link {
-  color: #61dafb;
+.light-button button.bt .button-holder svg {
+  height: 50px;
+  fill: #0f0f0f;
+  transition: 300ms;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.light-button button.bt .light-holder {
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-button button.bt .light-holder .dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #0a0a0a;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.light-button button.bt .light-holder .light {
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+  background: transparent;
+}
+
+.light-button button.bt:hover .button-holder svg {
+  fill: rgba(88, 101, 242, 1);
+}
+
+.light-button button.bt:hover .button-holder {
+  color: rgba(88, 101, 242, 1);
+  outline: rgba(88, 101, 242, 1) 2px solid;
+  outline-offset: 2px;
+}
+
+.light-button button.bt:hover .light-holder .light {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(88, 101, 242, 1) 0%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+#div1 {
+  width: 100%;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes animateHeight {
+  0% {
+    height: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    height: 50px;
   }
 }
+
+#l,
+#m {
+  width: 150px;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 0px 200px 0px 200px;
+  -moz-border-radius: 0px 200px 0px 200px;
+  -webkit-border-radius: 0px 200px 0px 200px;
+  border: 1px solid transparent;
+  animation: animateHeight 1s infinite alternate-reverse;
+}
+#m {
+  border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+}
+.pupil,
+.pupl2,
+.pupil3,
+.pupil4,
+.p5 {
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.158);
+}
+.pupil3,
+.pupil4 {
+  width: 18px;
+  height: 3.5px;
+  overflow: visible;
+}
+
+.pupil {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    rgb(255, 105, 105),
+    rgb(129, 249, 129),
+    rgb(96, 96, 255),
+    rgb(71, 71, 71)
+  );
+}
+.pupl2 {
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(
+    rgb(255, 2, 2),
+    rgb(0, 255, 0),
+    rgb(0, 0, 255),
+    rgb(0, 0, 0)
+  );
+}
+.p5 {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(
+    rgb(252, 71, 71),
+    rgb(70, 249, 70),
+    rgb(63, 63, 254),
+    rgb(48, 47, 47)
+  );
+}
+.pupil3 {
+  width: 5px;
+  height: 18px;
+}
+
